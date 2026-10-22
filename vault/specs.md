@@ -77,5 +77,6 @@ Resolución de ambigüedades del spec (ver `vault/decisions/`):
 - [[ADR-0001-tags-globales]] · [[ADR-0002-ends-on-opcional]] · [[ADR-0003-recorte-fecha-sugerida]]
 - [[ADR-0004-quitar-tag-en-uso]] · [[ADR-0005-adelantar-end-date]] · [[ADR-0006-rango-fechas-proyecto]]
 - [[ADR-0007-completar-proyecto]] · [[ADR-0008-prioridad-no-recalcula]] · [[ADR-0009-borrar-tag-global]] · [[ADR-0010-borrar-proyecto]]
+- [[ADR-0011-formato-campos-texto]]
 
 Contrato de la API: [[api]] · Fases y progreso: [[roadmap]] · Ramas de Git: [[git-branches]]

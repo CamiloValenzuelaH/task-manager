@@ -31,6 +31,7 @@ Fuente: `vault/specs.md` y `vault/decisions/`. Si este archivo y el vault no coi
 | 0008 | Cambiar `priority` no recalcula `ends_on`.                                                                                |
 | 0009 | Borrar un tag global lo desvincula de proyectos y tareas (cascada en las tablas pivote).                                  |
 | 0010 | Borrar un proyecto borra sus tareas (cascada).                                                                            |
+| 0011 | `Tag.color` hex `#RRGGBB`; `Tag.name` 1–50 (trim); `description` opcional al crear → `""` (nunca `null`).                 |
 
 ## Casos límite que los tests deben cubrir
 
