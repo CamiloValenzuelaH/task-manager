@@ -60,7 +60,8 @@ TS: `tsconfig.base.json` en modo estricto, con `noUncheckedIndexedAccess` y `exa
 
 ## Git
 
-- No se hace commit directo en `main`. Ramas `feat/<slug>`, `fix/<slug>`, `chore/<slug>`, `docs/<slug>`.
+- Modelo de ramas: [vault/git-branches.md](vault/git-branches.md). `main` = estable, `develop` = desarrollo.
+- No se hace commit directo en `main` ni en `develop`. Las ramas `feat/<slug>`, `fix/<slug>`, `chore/<slug>`, `docs/<slug>` salen de `develop` y se integran en `develop` con `--no-ff`.
 - Conventional Commits: `feat(tasks): ...`, `fix(api): ...`.
 - Usa `/ship` para hacer commits. **Nunca hagas push, merge ni borres ramas sin confirmación del usuario.**
 
