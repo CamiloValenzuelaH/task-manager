@@ -40,7 +40,7 @@ Estado: ✅
 Estado: 🚧 (rama `feat/fase1-shared-rules`)
 
 - [x] Schemas Zod de Tag, Project y Task (`packages/shared/src/schemas/`, [[ADR-0011-formato-campos-texto]])
-- [ ] `suggestEndsOn` y `PRIORITY_DAYS` (R3, [[ADR-0002-ends-on-opcional]], [[ADR-0003-recorte-fecha-sugerida]])
+- [x] `suggestEndsOn` y `PRIORITY_DAYS` (R3, [[ADR-0002-ends-on-opcional]], [[ADR-0003-recorte-fecha-sugerida]])
 - [ ] `assertEndsOnWithinProject` (R2)
 - [ ] `assertTagsInProject` (R1)
 - [ ] Tests unitarios de las reglas (límites de fecha, zonas horarias)
