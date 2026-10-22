@@ -57,7 +57,7 @@ main ─────●───────────────────
 - `merge --no-ff` para conservar en el historial qué entró en cada rama.
 - Nada de `push --force`, `reset --hard` ni rebase sobre `develop` o `main`.
 - Push, merge, tag y borrado de ramas siempre con confirmación del usuario.
-- Remoto (GitHub): todavía sin configurar. Cuando exista, `main` y `develop` se protegen (PR obligatorio + checks de CI) y las ramas de trabajo se integran por Pull Request contra `develop`.
+- Remoto (GitHub): `origin` → `https://github.com/CamiloValenzuelaH/task-manager` (público). Antes de cada push se revisa que no haya secretos en los commits nuevos. Cuando el repo tenga CI, `main` y `develop` se protegen (PR obligatorio + checks) y las ramas de trabajo se integran por Pull Request contra `develop`.
 
 ## Estado actual
 

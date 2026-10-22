@@ -49,7 +49,11 @@ Muestra el resumen (rama, hash y mensaje, archivos) y **pregunta** antes de cual
 - Merge a `develop` (lo normal): `git switch develop && git merge --no-ff <rama>`.
 - Release a `main` (solo desde `develop`, con `npm run check` en verde): `git switch main && git merge --no-ff develop` y, opcionalmente, `git tag vX.Y.Z`.
 - `hotfix/*`: merge a `main` **y** a `develop`.
-- Push: `git push -u origin <rama>` (solo si existe un remoto). Con GitHub configurado, se prefiere abrir un PR contra `develop`.
-- Borrar la rama ya integrada: `git branch -d <rama>`.
+- Push: `git push -u origin <rama>`. El remoto `origin` es `https://github.com/CamiloValenzuelaH/task-manager` (**público**). Antes de cada push:
+  1. `git remote -v` para confirmar que `origin` es ese repo y `git status` limpio.
+  2. Revisa los commits que se van a publicar (`git log @{u}..` o `git log origin/develop..HEAD`) y busca secretos en el diff (claves, tokens, `.env`, `*.db`); si hay alguno, detente.
+  3. Nunca `--force`. Publica solo las ramas que el usuario indique (`main`, `develop`, la rama de trabajo).
+  4. Con CI o protección de ramas activas se prefiere abrir un PR contra `develop` (`gh` no está instalado: se abre desde la web de GitHub).
+- Borrar la rama ya integrada: `git branch -d <rama>` (y en el remoto, `git push origin --delete <rama>`, solo con confirmación).
 
 Nunca hagas `push --force`, `reset --hard` ni rebase sobre `main`/`develop` sin petición explícita. Si el modelo de ramas cambia, actualiza `vault/git-branches.md`.
