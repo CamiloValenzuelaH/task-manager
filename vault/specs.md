@@ -78,4 +78,4 @@ Resolución de ambigüedades del spec (ver `vault/decisions/`):
 - [[ADR-0004-quitar-tag-en-uso]] · [[ADR-0005-adelantar-end-date]] · [[ADR-0006-rango-fechas-proyecto]]
 - [[ADR-0007-completar-proyecto]] · [[ADR-0008-prioridad-no-recalcula]] · [[ADR-0009-borrar-tag-global]] · [[ADR-0010-borrar-proyecto]]
 
-Contrato de la API: [[api]] · Fases y progreso: [[roadmap]]
+Contrato de la API: [[api]] · Fases y progreso: [[roadmap]] · Ramas de Git: [[git-branches]]

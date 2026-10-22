@@ -7,6 +7,8 @@ disable-model-invocation: true
 
 # /ship
 
+Modelo de ramas completo: `vault/git-branches.md` ([[git-branches]]). Resumen: `main` = estable, `develop` = desarrollo, y las ramas de trabajo salen de `develop` y vuelven a `develop`.
+
 ## 1. Revisar
 
 - `git status`, `git diff` y `git diff --staged`.
@@ -21,7 +23,7 @@ disable-model-invocation: true
 ## 3. Rama
 
 - Rama actual: `git branch --show-current`.
-- Si es `main`, crea una rama antes del commit: `git switch -c <tipo>/<slug-kebab>`, con tipo `feat | fix | chore | docs | refactor | test`.
+- Si es `main` o `develop`, **no hagas commit ahí**: crea una rama desde `develop` con `git switch -c <tipo>/<slug-kebab> develop`, con tipo `feat | fix | chore | docs | refactor | test` (`hotfix/` sale de `main`). Los cambios sin commit se mueven con la rama.
 - Si ya estás en una rama de trabajo cuyo tema coincide, úsala.
 
 ## 4. Commit
@@ -44,7 +46,10 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 
 Muestra el resumen (rama, hash y mensaje, archivos) y **pregunta** antes de cualquiera de estas acciones:
 
-- Merge a `main`: `git switch main && git merge --no-ff <rama>`.
-- Push: `git push -u origin <rama>` (solo si existe un remoto).
+- Merge a `develop` (lo normal): `git switch develop && git merge --no-ff <rama>`.
+- Release a `main` (solo desde `develop`, con `npm run check` en verde): `git switch main && git merge --no-ff develop` y, opcionalmente, `git tag vX.Y.Z`.
+- `hotfix/*`: merge a `main` **y** a `develop`.
+- Push: `git push -u origin <rama>` (solo si existe un remoto). Con GitHub configurado, se prefiere abrir un PR contra `develop`.
 - Borrar la rama ya integrada: `git branch -d <rama>`.
-  Nunca hagas `push --force`, `reset --hard` ni rebase de ramas compartidas sin petición explícita.
+
+Nunca hagas `push --force`, `reset --hard` ni rebase sobre `main`/`develop` sin petición explícita. Si el modelo de ramas cambia, actualiza `vault/git-branches.md`.

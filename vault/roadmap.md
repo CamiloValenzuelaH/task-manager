@@ -95,4 +95,4 @@ Estado: ⏳
 
 ---
 
-Relacionado: [[specs]] · [[api]] · ADRs en `decisions/`
+Relacionado: [[specs]] · [[api]] · [[git-branches]] · ADRs en `decisions/`
