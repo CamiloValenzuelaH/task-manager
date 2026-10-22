@@ -13,7 +13,7 @@ Fases de trabajo derivadas de [[specs]]. Marca cada tarea con `[x]` al completar
 | Fase | Nombre                                  | Estado |
 | ---- | --------------------------------------- | ------ |
 | 0    | [[#Fase 0 — Bootstrap]]                 | ✅     |
-| 1    | [[#Fase 1 — Shared (schemas y reglas)]] | ⏳     |
+| 1    | [[#Fase 1 — Shared (schemas y reglas)]] | 🚧     |
 | 2    | [[#Fase 2 — API base y Tags]]           | ⏳     |
 | 3    | [[#Fase 3 — Projects]]                  | ⏳     |
 | 4    | [[#Fase 4 — Tasks]]                     | ⏳     |
@@ -37,7 +37,7 @@ Estado: ✅
 
 ## Fase 1 — Shared (schemas y reglas)
 
-Estado: ⏳
+Estado: 🚧 (rama `feat/fase1-shared-rules`)
 
 - [ ] Schemas Zod de Tag, Project y Task
 - [ ] `suggestEndsOn` y `PRIORITY_DAYS` (R3, [[ADR-0002-ends-on-opcional]], [[ADR-0003-recorte-fecha-sugerida]])

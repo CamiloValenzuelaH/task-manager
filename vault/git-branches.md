@@ -61,5 +61,10 @@ main ─────●───────────────────
 
 ## Estado actual
 
-- `main`: bootstrap inicial (`641bdb6`).
-- `develop`: Fase 0 completa (workspaces y tooling).
+- `main`: bootstrap inicial (`641bdb6`). Release pendiente: se hará al cerrar la Fase 1 (Fases 0 + 1).
+- `develop`: Fase 0 completa (`cdd60a9`): `chore/workspaces` y `docs/git-branches` integradas y borradas.
+- Ramas de trabajo abiertas:
+
+| Rama                      | Sale de   | Objetivo                                                       |
+| ------------------------- | --------- | -------------------------------------------------------------- |
+| `feat/fase1-shared-rules` | `develop` | Fase 1 del [[roadmap]]: schemas Zod de Tag/Project/Task, R1–R3 |
