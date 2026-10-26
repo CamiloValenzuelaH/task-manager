@@ -11,6 +11,8 @@ Base: `/api` · JSON en snake_case · Errores: `{ "error": { "code", "message", 
 | 409                    | Conflicto de estado (`TAG_IN_USE`, `TASKS_EXCEED_END_DATE`)                                |
 | 422                    | Regla de negocio (`TAG_NOT_IN_PROJECT`, `ENDS_ON_AFTER_PROJECT_END`, `INVALID_DATE_RANGE`) |
 
+`details` de las reglas 422: `TAG_NOT_IN_PROJECT` → `{ invalid_tag_ids }` · `ENDS_ON_AFTER_PROJECT_END` → `{ ends_on, max_ends_on }`.
+
 ## Tags
 
 | Método | Ruta        | Body                | Respuesta                                     |
