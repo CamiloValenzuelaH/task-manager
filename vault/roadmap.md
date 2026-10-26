@@ -1,7 +1,7 @@
 ---
 title: Roadmap
 tags: [roadmap, fases]
-updated: 2026-10-22
+updated: 2026-10-26
 ---
 
 # Roadmap — Task Tracker
@@ -13,7 +13,7 @@ Fases de trabajo derivadas de [[specs]]. Marca cada tarea con `[x]` al completar
 | Fase | Nombre                                  | Estado |
 | ---- | --------------------------------------- | ------ |
 | 0    | [[#Fase 0 — Bootstrap]]                 | ✅     |
-| 1    | [[#Fase 1 — Shared (schemas y reglas)]] | 🚧     |
+| 1    | [[#Fase 1 — Shared (schemas y reglas)]] | ✅     |
 | 2    | [[#Fase 2 — API base y Tags]]           | ⏳     |
 | 3    | [[#Fase 3 — Projects]]                  | ⏳     |
 | 4    | [[#Fase 4 — Tasks]]                     | ⏳     |
@@ -37,13 +37,13 @@ Estado: ✅
 
 ## Fase 1 — Shared (schemas y reglas)
 
-Estado: 🚧 (rama `feat/fase1-shared-rules`)
+Estado: ✅ (rama `feat/fase1-shared-rules`)
 
 - [x] Schemas Zod de Tag, Project y Task (`packages/shared/src/schemas/`, [[ADR-0011-formato-campos-texto]])
 - [x] `suggestEndsOn` y `PRIORITY_DAYS` (R3, [[ADR-0002-ends-on-opcional]], [[ADR-0003-recorte-fecha-sugerida]])
 - [x] `assertEndsOnWithinProject` (R2)
-- [ ] `assertTagsInProject` (R1)
-- [ ] Tests unitarios de las reglas (límites de fecha, zonas horarias)
+- [x] `assertTagsInProject` (R1)
+- [x] Tests unitarios de las reglas (límites de fecha, zonas horarias)
 
 ## Fase 2 — API base y Tags
 
