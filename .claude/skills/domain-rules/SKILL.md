@@ -17,6 +17,8 @@ Fuente: `vault/specs.md` y `vault/decisions/`. Si este archivo y el vault no coi
 
 `PRIORITY_DAYS = { low: 4, medium: 3, high: 2, urgent: 1 }`
 
+Las reglas lanzan `RuleViolationError(code, message, details)` (`packages/shared/src/rules/errors.ts`), sin dependencia de Fastify; el plugin de errores de la API lo traduce a 422. Cada `assert*` tiene una variante booleana (`isEndsOnWithinProject`) para la UI y para comprobaciones de servicio como ADR-0005.
+
 ## Decisiones (ADRs)
 
 | ADR  | Decisión                                                                                                                  |
@@ -31,6 +33,7 @@ Fuente: `vault/specs.md` y `vault/decisions/`. Si este archivo y el vault no coi
 | 0008 | Cambiar `priority` no recalcula `ends_on`.                                                                                |
 | 0009 | Borrar un tag global lo desvincula de proyectos y tareas (cascada en las tablas pivote).                                  |
 | 0010 | Borrar un proyecto borra sus tareas (cascada).                                                                            |
+| 0011 | `Tag.color` hex `#RRGGBB`; `Tag.name` 1–50 (trim); `description` opcional al crear → `""` (nunca `null`).                 |
 
 ## Casos límite que los tests deben cubrir
 
