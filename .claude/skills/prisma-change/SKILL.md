@@ -6,9 +6,11 @@ description: Cómo cambiar el modelo de datos (apps/api/prisma/schema.prisma), g
 # Cambios en el modelo de datos
 
 ## Antes de empezar
+
 - Compara el cambio con el "Esquema de Datos" de `vault/specs.md`. Si el spec no lo contempla, registra un ADR (skill `adr`) y confírmalo con el usuario.
 
 ## Pasos
+
 1. Edita `apps/api/prisma/schema.prisma`:
    - Modelos en PascalCase, campos en camelCase con `@map("snake_case")`, tablas con `@@map("snake_case_plural")`.
    - IDs: `String @id @default(uuid())`.
@@ -20,6 +22,7 @@ description: Cómo cambiar el modelo de datos (apps/api/prisma/schema.prisma), g
 5. `/test` completo.
 
 ## No hacer
+
 - No edites migraciones ya commiteadas: crea una nueva.
 - No uses `prisma db push` salvo en tests (BD temporal).
 - No commitees archivos `*.db`.

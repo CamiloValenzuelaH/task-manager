@@ -4,8 +4,9 @@
 import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 let filePath = process.argv[2];
 if (!filePath) {
@@ -17,6 +18,9 @@ if (!filePath) {
   }
 }
 if (!filePath) process.exit(0);
+
+// Rutas estilo Git Bash (/c/Users/...) → C:/Users/...
+if (process.platform === 'win32') filePath = filePath.replace(/^\/([A-Za-z])\//, '$1:/');
 
 const rel = path.relative(root, path.resolve(filePath)).split(path.sep).join('/');
 const match = rel.match(/^((?:apps|packages)\/[^/]+)\/(.+\.(?:ts|tsx))$/);
@@ -34,6 +38,10 @@ const result = spawnSync(
 
 if (result.status === 0) process.exit(0);
 
-const output = `${result.stdout ?? ''}\n${result.stderr ?? ''}`.trim().split('\n').slice(-60).join('\n');
+const output = `${result.stdout ?? ''}\n${result.stderr ?? ''}`
+  .trim()
+  .split('\n')
+  .slice(-60)
+  .join('\n');
 process.stderr.write(`Tests relacionados con ${rel} fallaron (${workspace}):\n${output}\n`);
 process.exit(2);

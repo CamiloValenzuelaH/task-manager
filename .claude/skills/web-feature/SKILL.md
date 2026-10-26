@@ -6,6 +6,7 @@ description: Convenciones para crear vistas, componentes, formularios y llamadas
 # Vistas y componentes web
 
 ## Estructura
+
 ```
 apps/web/src/
 ├─ api/client.ts            fetch wrapper: base URL, JSON, convierte { error } en ApiError
@@ -18,6 +19,7 @@ apps/web/src/
 ```
 
 ## Reglas
+
 - Datos del servidor **solo** a través de TanStack Query. Query keys: `['projects']`, `['projects', id]`, `['projects', id, 'tasks']`, `['tags']`. Invalida las keys afectadas en `onSuccess`.
 - Formularios validados con los schemas Zod de `@task-tracker/shared` (no se duplican reglas).
 - Formulario de tarea:
@@ -29,4 +31,5 @@ apps/web/src/
 - Accesibilidad: labels en todos los inputs; acciones destructivas con confirmación.
 
 ## Tests
+
 - Testing Library + Vitest; `msw` para simular la API. Prueba el comportamiento (lo que ve y hace el usuario), no los detalles de implementación.

@@ -6,6 +6,7 @@ description: Pasos y plantillas para crear o modificar un endpoint REST en apps/
 # Crear o modificar un endpoint
 
 ## Pasos (en este orden)
+
 1. **Contrato:** añade o ajusta la entrada en `vault/api.md` (método, ruta, body, respuestas, errores).
 2. **Schema:** en `packages/shared/src/schemas/<entidad>.ts` define `Create<X>Input`, `Update<X>Input` y `<X>` con Zod. Exporta también los tipos (`z.infer`).
 3. **Repository** (`apps/api/src/repositories/<entidad>.repository.ts`): solo acceso a Prisma. Convierte filas ↔ DTO snake_case (`tag_ids` desde las tablas pivote).
@@ -15,6 +16,7 @@ description: Pasos y plantillas para crear o modificar un endpoint REST en apps/
 7. Ejecuta `/test api`.
 
 ## Plantilla de route
+
 ```ts
 export async function taskRoutes(app: FastifyInstance) {
   app.post('/projects/:projectId/tasks', async (req, reply) => {
@@ -27,5 +29,6 @@ export async function taskRoutes(app: FastifyInstance) {
 ```
 
 ## Respuestas
+
 - 200 GET/PATCH/PUT, 201 POST, 204 DELETE.
 - Los errores los formatea el plugin `errors/error-handler.ts`: `ZodError` → 400 `VALIDATION_ERROR`; `DomainError` → su status; Prisma `P2025` → 404 `NOT_FOUND`.

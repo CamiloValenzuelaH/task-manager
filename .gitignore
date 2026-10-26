@@ -1,10 +1,23 @@
+# Dependencias y builds
 node_modules/
 dist/
 coverage/
+
+# Base de datos local y secretos
 *.db
 *.db-journal
 .env
 .env.*
 !.env.example
-vault/.obsidian/workspace.json
+
+# Obsidian (configuración y estado personal del vault)
+vault/.obsidian/
+vault/.trash/
+.obsidian/
+
+# Claude Code: configuración personal (lo compartido es CLAUDE.md, .claude/settings.json y .claude/skills/)
+CLAUDE.local.md
 .claude/settings.local.json
+.claude/**/*.local.*
+.claude/agent-memory-local/
+.claude/worktrees/

@@ -1,0 +1,14 @@
+{
+  "name": "@task-tracker/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@task-tracker/shared": "*"
+  }
+}
